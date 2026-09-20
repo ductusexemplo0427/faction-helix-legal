@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faction Helix Privacy Policy</title>
+<style>
+  :root { --bg:#ffffff; --fg:#1b1f2a; --muted:#5b6478; --line:#dfe3ec; --card:#f5f7fb; --link:#3457d5; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0f1424; --fg:#e7eaf3; --muted:#9aa3b8; --line:#28304a; --card:#171e35; --link:#8fa8ff; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:40px 20px 80px; }
+  h1 { font-size:2rem; margin:0 0 4px; }
+  h2 { font-size:1.25rem; margin:2.2em 0 .5em; padding-top:.4em; border-top:1px solid var(--line); }
+  p, li { margin:.6em 0; }
+  .meta { color:var(--muted); margin:0 0 1.5em; }
+  .summary { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 18px; }
+  .summary ul { margin:.3em 0; padding-left:1.2em; }
+  a { color:var(--link); }
+  code { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:1px 6px; font-size:.92em; }
+  .scroll { overflow-x:auto; }
+  table { border-collapse:collapse; width:100%; min-width:520px; }
+  th, td { text-align:left; vertical-align:top; padding:9px 12px; border:1px solid var(--line); }
+  th { background:var(--card); }
+  @media print { :root { --bg:#fff; --fg:#000; --muted:#333; --line:#bbb; --card:#f2f2f2; --link:#000; } }
+</style>
+</head>
+<body>
+<main>
+<h1>Faction Helix Privacy Policy</h1>
+<p class="meta">Effective September 20, 2026</p>
+
+<div class="summary">
+  <strong>The short version</strong>
+  <ul>
+    <li>Faction Helix is a Discord bot that shows Marvel Rivals rank cards and server leaderboards.</li>
+    <li>It stores your Discord ID and name, plus the game stats <em>you</em> type in. It does not read your messages.</li>
+    <li>Other members of your servers can see your card and leaderboard entry. Server admins can see and manage the information of members in their server.</li>
+    <li>We don't sell your information or use it for advertising.</li>
+    <li>You can delete everything at any time with <code>/deletedata</code>.</li>
+  </ul>
+</div>
+
+<h2>1. Who we are</h2>
+<p>Faction Helix (&ldquo;the bot&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is run by Xander Francisco. You can reach us at <a href="mailto:ductusexemplo0427@gmail.com">ductusexemplo0427@gmail.com</a>.</p>
+<p>Faction Helix is an unofficial, fan-made project. It is not affiliated with, endorsed by, or sponsored by NetEase Games, Marvel, or Discord. Marvel Rivals, its characters, and its artwork belong to their respective owners.</p>
+
+<h2>2. What the bot does</h2>
+<p>Members of a Discord server link a player name, enter their own rank and stats, and the bot produces player cards and a server leaderboard. Server admins can also confirm members' reported ranks and manage the information stored for their server.</p>
+
+<h2>3. Information we collect</h2>
+<div class="scroll">
+<table>
+  <tr><th>Type</th><th>What</th><th>Where it comes from</th></tr>
+  <tr><td>Discord information</td>
+      <td>Your Discord user ID and username; the ID and name of each server the bot is added to; which members of a server have linked a player.</td>
+      <td>Discord, when you use a command or the bot is added to a server.</td></tr>
+  <tr><td>Information you provide</td>
+      <td>Your in-game name; your self-reported rank, points, level, ranked totals (games, wins, kills, deaths, assists, MVPs) and per-hero stats (games, wins, hours); your favorite hero and outfit name.</td>
+      <td>You, through commands such as <code>/link</code>, <code>/report</code> and <code>/favorite</code>.</td></tr>
+  <tr><td>Information created by using the bot</td>
+      <td>A time-stamped history of your reported rank and stats (one entry each time they are saved); whether a server admin has confirmed (&ldquo;vouched&rdquo;) your rank; awards or notes a server admin has given you; the time of your last refresh request.</td>
+      <td>The bot and server admins.</td></tr>
+</table>
+</div>
+<p><strong>What we do not collect.</strong> The bot does not read the content of messages in your servers or your direct messages, and it does not ask for your email address, real name, location, payment details, or game account passwords. We do not run advertising or analytics trackers. The hosting services described below may keep ordinary technical logs (for example, error logs) as part of running the service.</p>
+<p>Whether you are a server admin is checked at the moment you run an admin command. We do not store it.</p>
+
+<h2>4. How we use it</h2>
+<ul>
+  <li>To create your player card, rank, and your server's leaderboard.</li>
+  <li>To let server admins confirm ranks, manage member information, and give awards.</li>
+  <li>To keep the bot working, fix problems, and prevent misuse.</li>
+</ul>
+<p>We do not sell or rent your information, use it for advertising or profiling, or use it to train AI models.</p>
+
+<h2>5. Who can see your information</h2>
+<ul>
+  <li><strong>Other people using the bot.</strong> Your card and your leaderboard entry (in-game name, rank, and the stats you reported) are visible to members of the servers where you linked. Anyone using the bot can also ask for your card by mentioning you in <code>/profile</code>, in any server that has the bot.</li>
+  <li><strong>Server admins.</strong> Admins of a server where you linked (people with the Manage Server permission) can see that you linked, see your reported information, confirm your rank, give you awards, and edit or delete the information stored about you in their server.</li>
+  <li><strong>Us.</strong> We can access the database to run and support the service.</li>
+  <li><strong>Service providers.</strong> Discord (the platform the bot runs on), Railway (hosts the bot), and Supabase (hosts our database, on Amazon Web Services servers in the United States). They process data on our behalf to provide their services.</li>
+  <li><strong>Game-data service (only if we turn it on).</strong> The bot can be switched to a mode that looks up players on a third-party game-data service, MarvelRivalsAPI.com. In that mode, the in-game names you link are sent to that service to fetch your stats. This is not how the bot works today; if we switch to it we will update this policy first.</li>
+  <li><strong>Legal reasons.</strong> If the law requires it, or to protect the safety of people or the service.</li>
+</ul>
+
+<h2>6. How long we keep it</h2>
+<p>We keep your information until you delete it. You can delete it yourself:</p>
+<ul>
+  <li><code>/unlink</code> deletes your linked player, reported stats, and rank history.</li>
+  <li><code>/deletedata</code> permanently deletes everything above, plus your Discord ID and name, server memberships, and awards. Type DELETE in the confirm box to confirm.</li>
+</ul>
+<p>Information about a server itself (its ID and name, and its settings) is kept until the server's admin asks us to delete it. Removing the bot from a server does not delete that server's information automatically. Our database provider may keep backups for a short period after deletion.</p>
+
+<h2>7. Your choices and rights</h2>
+<ul>
+  <li><strong>See it.</strong> <code>/profile</code> shows the card the bot keeps for you. To get a copy of everything we hold, email us.</li>
+  <li><strong>Correct it.</strong> Update your stats with <code>/report</code>, or ask a server admin.</li>
+  <li><strong>Delete it.</strong> Use <code>/deletedata</code>, or email us.</li>
+</ul>
+<p>Depending on where you live (for example the European Economic Area, the United Kingdom, or California), you may have additional rights, such as access, correction, deletion, portability, and objection. Contact us to use them, and we will reply within 30 days.</p>
+
+<h2>8. Children</h2>
+<p>You must meet Discord's minimum age to use Discord (13, or higher where local law requires). The bot is not directed at children below that age, and we do not knowingly collect their information. If you believe a child has used the bot, contact us and we will delete the information.</p>
+
+<h2>9. Security</h2>
+<p>Data is sent over encrypted connections and stored with reputable hosting providers, and access to the database is limited to us. No method of storage or transmission is completely secure, so we cannot guarantee absolute security.</p>
+
+<h2>10. Changes to this policy</h2>
+<p>If we change this policy, we will update the date at the top of this page. If a change is significant, we will also announce it where the bot is used, for example in its support server or in the bot's Discord profile.</p>
+
+<h2>11. Contact</h2>
+<p>Questions or requests: <a href="mailto:ductusexemplo0427@gmail.com">ductusexemplo0427@gmail.com</a>.</p>
+</main>
+</body>
+</html>
