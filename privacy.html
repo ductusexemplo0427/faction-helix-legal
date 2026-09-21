@@ -36,7 +36,7 @@
   <strong>The short version</strong>
   <ul>
     <li>Faction Helix is a Discord bot that shows Marvel Rivals rank cards and server leaderboards.</li>
-    <li>It stores your Discord ID and name, plus the game stats <em>you</em> type in. It does not read your messages.</li>
+    <li>It stores your Discord ID and name, plus the game stats <em>you</em> type in. It does not read your messages, other than noticing when one mentions the bot (see below).</li>
     <li>Other members of your servers can see your card and leaderboard entry. Server admins can see and manage the information of members in their server.</li>
     <li>We don't sell your information or use it for advertising.</li>
     <li>You can delete everything at any time with <code>/deletedata</code>.</li>
@@ -58,14 +58,14 @@
       <td>Your Discord user ID and username; the ID and name of each server the bot is added to; which members of a server have linked a player.</td>
       <td>Discord, when you use a command or the bot is added to a server.</td></tr>
   <tr><td>Information you provide</td>
-      <td>Your in-game name; your self-reported rank, points, level, ranked totals (games, wins, kills, deaths, assists, MVPs) and per-hero stats (games, wins, hours); your favorite hero and outfit name.</td>
+      <td>Your in-game name; your self-reported rank, points, level, ranked totals (games, wins, kills, deaths, assists, MVPs) and per-hero stats (games, wins, hours); your favorite hero and outfit name; the name, color and emblem of any faction you start; the progress numbers and notes you report in challenges; your sign-ups for training sessions.</td>
       <td>You, through commands such as <code>/link</code>, <code>/report</code> and <code>/favorite</code>.</td></tr>
   <tr><td>Information created by using the bot</td>
-      <td>A time-stamped history of your reported rank and stats (one entry each time they are saved); whether a server admin has confirmed (&ldquo;vouched&rdquo;) your rank; awards or notes a server admin has given you; the time of your last refresh request.</td>
+      <td>A time-stamped history of your reported rank and stats (one entry each time they are saved); whether a server admin has confirmed (&ldquo;vouched&rdquo;) your rank; awards or notes a server admin has given you; your faction membership in each server (which faction you are in, whether you lead it, and when you joined); your requests to join a faction and who approved or denied them; which challenges you joined, your progress in them, which training sessions you signed up for and whether you attended, and a record of each report and of any correction an admin or faction leader made; a log of actions server admins take on your information (which admin, what changed, and when); the time of your last refresh request.</td>
       <td>The bot and server admins.</td></tr>
 </table>
 </div>
-<p><strong>What we do not collect.</strong> The bot does not read the content of messages in your servers or your direct messages, and it does not ask for your email address, real name, location, payment details, or game account passwords. We do not run advertising or analytics trackers. The hosting services described below may keep ordinary technical logs (for example, error logs) as part of running the service.</p>
+<p><strong>What we do not collect.</strong> The bot does not read or store the content of messages in your servers or your direct messages. The one exception is a message that mentions the bot directly: the bot notices the mention, and whether the rest of the message is empty or says "menu" or "help", so that it can offer its button menu. That text is not stored. The bot does not listen to or record voice channels. J.A.R.V.I.S., the optional second bot from the same operator, only notes who joins the voice channel of a live training session. The bot does not ask for your email address, real name, location, payment details, or game account passwords. We do not run advertising or analytics trackers. The hosting services described below may keep ordinary technical logs (for example, error logs) as part of running the service.</p>
 <p>Whether you are a server admin is checked at the moment you run an admin command. We do not store it.</p>
 
 <h2>4. How we use it</h2>
@@ -78,8 +78,13 @@
 
 <h2>5. Who can see your information</h2>
 <ul>
-  <li><strong>Other people using the bot.</strong> Your card and your leaderboard entry (in-game name, rank, and the stats you reported) are visible to members of the servers where you linked. Anyone using the bot can also ask for your card by mentioning you in <code>/profile</code>, in any server that has the bot.</li>
-  <li><strong>Server admins.</strong> Admins of a server where you linked (people with the Manage Server permission) can see that you linked, see your reported information, confirm your rank, give you awards, and edit or delete the information stored about you in their server.</li>
+  <li><strong>Other people using the bot.</strong> Your card and your leaderboard entry (in-game name, rank, and the stats you reported) are visible to members of the servers where you linked. If you are in a faction, its name is shown on your card in that server, and anyone in the server can see who is in a faction, with their in-game names and ranks, using <code>/faction info</code> and <code>/faction list</code>. Anyone using the bot can also see your rank history as a chart with <code>/progress</code>, compare your stats with theirs using <code>/compare</code>, and see summaries such as member counts, average ranks and popular heroes for a server or faction with <code>/serverstats</code>, <code>/faction stats</code> and <code>/faction top</code>. Anyone using the bot can also ask for your card by mentioning you in <code>/profile</code>, in any server that has the bot.</li>
+  <li><strong>Everyone in a server that uses rank roles.</strong> If a server's admin turns on rank roles, the bot gives you a Discord role named after your rank tier (for example Gold) in that server, and everyone in the server can see it. The bot updates or removes it when your rank changes, or when you unlink, delete your data, or are taken off the server's list. To do this, the bot holds the Manage Roles permission in that server. The roles the bot creates carry no permissions.</li>
+  <li><strong>Everyone in a server with the weekly digest or hall of fame.</strong> If a server's admin turns on the weekly digest, the bot posts a summary card to a channel each week with the top players, the biggest rank gains, the top factions and challenge results, using players' in-game names and ranks. The challenge hall of fame lists the members who have won the most challenge rounds. Players whose profile is private are left out of both.</li>
+  <li><strong>Everyone who can see a training session.</strong> A training session's card, in the channel where it is posted, shows the host and the in-game names (or Discord names) of the people signed up. The host and the server's admins can also see who attended. Attendance is recorded when you join the voice channel of a session while it is live; nothing is recorded from the voice channel itself.</li>
+  <li><strong>Everyone who can see a challenge.</strong> Challenge standings (your in-game name and progress) are shown in the challenge's channel to everyone who can read it: the whole server for a server challenge, or the faction for a faction challenge. Server admins, and the leader of a faction for that faction's challenges, can see your recent reports and notes and can correct your progress. Corrections are logged.</li>
+  <li><strong>Faction members and moderators.</strong> If a faction has a private channel, its members, its leader and the server's admins can read it. When you ask to join such a faction, your Discord name, in-game name and rank are posted for the faction's leader and for the server's moderators, who approve or deny the request. The bot may send you a Discord message with the result.</li>
+  <li><strong>Server admins.</strong> Admins of a server where you linked (people with the Manage Server permission) can see that you linked and everything stored about you there, add a player for you, confirm your rank, give you awards, change your rank, stats, heroes and favorite, delete your linked player and its stats, take you out of a faction or close a faction, and take you off their server's list. Each of these actions is recorded in a log that other admins of that server can read, showing which admin acted, what changed, and when. Admins cannot reach information about people who are not on their server's list, and they cannot delete your Discord ID or account record; only you can do that with <code>/deletedata</code>.</li>
   <li><strong>Us.</strong> We can access the database to run and support the service.</li>
   <li><strong>Service providers.</strong> Discord (the platform the bot runs on), Railway (hosts the bot), and Supabase (hosts our database, on Amazon Web Services servers in the United States). They process data on our behalf to provide their services.</li>
   <li><strong>Game-data service (only if we turn it on).</strong> The bot can be switched to a mode that looks up players on a third-party game-data service, MarvelRivalsAPI.com. In that mode, the in-game names you link are sent to that service to fetch your stats. This is not how the bot works today; if we switch to it we will update this policy first.</li>
@@ -89,10 +94,11 @@
 <h2>6. How long we keep it</h2>
 <p>We keep your information until you delete it. You can delete it yourself:</p>
 <ul>
-  <li><code>/unlink</code> deletes your linked player, reported stats, and rank history.</li>
-  <li><code>/deletedata</code> permanently deletes everything above, plus your Discord ID and name, server memberships, and awards. Type DELETE in the confirm box to confirm.</li>
+  <li><code>/unlink</code> deletes your linked player, reported stats, and rank history. A server admin can also do this for you in their server.</li>
+  <li><code>/faction leave</code> takes you out of your faction. A faction with no members left is deleted.</li>
+  <li><code>/deletedata</code> permanently deletes everything above, plus your Discord ID and name, server memberships, faction memberships, join requests, challenge progress and reports, awards, and the admin-action log entries about you. If you led a faction, leadership passes to its longest-standing member. Type DELETE in the confirm box to confirm.</li>
 </ul>
-<p>Information about a server itself (its ID and name, and its settings) is kept until the server's admin asks us to delete it. Removing the bot from a server does not delete that server's information automatically. Our database provider may keep backups for a short period after deletion.</p>
+<p>Information about a server itself (its ID and name, its settings, and its admin-action log) is kept until the server's admin asks us to delete it. Removing the bot from a server does not delete that server's information automatically. Our database provider may keep backups for a short period after deletion.</p>
 
 <h2>7. Your choices and rights</h2>
 <ul>
