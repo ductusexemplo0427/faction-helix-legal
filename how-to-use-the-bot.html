@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faction Helix — How to Use the Bot</title>
+<style>
+  :root { --bg:#ffffff; --fg:#1b1f2a; --muted:#5b6478; --line:#dfe3ec; --card:#f5f7fb; --link:#3457d5; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0f1424; --fg:#e7eaf3; --muted:#9aa3b8; --line:#28304a; --card:#171e35; --link:#8fa8ff; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:40px 20px 80px; }
+  h1 { font-size:2rem; margin:0 0 4px; }
+  h2 { font-size:1.25rem; margin:2.2em 0 .5em; padding-top:.4em; border-top:1px solid var(--line); }
+  p, li { margin:.6em 0; }
+  .meta { color:var(--muted); margin:0 0 1.5em; }
+  a { color:var(--link); }
+  code { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:1px 6px; font-size:.92em; }
+  .scroll { overflow-x:auto; }
+  table { border-collapse:collapse; width:100%; min-width:520px; }
+  th, td { text-align:left; vertical-align:top; padding:9px 12px; border:1px solid var(--line); }
+  th { background:var(--card); }
+  time { display:none; }
+  @media print { :root { --bg:#fff; --fg:#000; --muted:#333; --line:#bbb; --card:#f2f2f2; --link:#000; } }
+</style>
+</head>
+<body>
+<main>
+<h1 id="faction-helix-how-to-use-the-bot">Faction Helix — How to Use the Bot</h1>
+<p><time data-atom="date" datetime="2026-09-21">2026-09-21</time></p>
+<p>Faction Helix is a free Discord bot for <strong>Marvel Rivals</strong> communities. It tracks ranks and stats, organizes teams into <strong>factions</strong>, runs <strong>challenges</strong> and leaderboards, and hands out <strong>awards</strong> — all from stats you report yourself, so there&#39;s nothing to link to a game account.</p>
+<p>Many servers also add <strong>J.A.R.V.I.S.</strong>, an optional companion bot that hosts hero training sessions, handles support tickets, posts events and Marvel Rivals news, and helps organize faction tournaments. This guide covers both bots.</p>
+<h2 id="getting-started">Getting started</h2>
+<p>The easiest way in is the menu: type <strong><code>/menu</code></strong>, or just mention the bot (<code>@Faction Helix</code>). This opens a private, multi-page hub with a button for almost everything below — you fill in a small form or pick from a drop-down instead of memorizing slash commands.</p>
+<p>Every slash command still works on its own too, and every menu button runs the exact same command behind the scenes, so use whichever feels easier.</p>
+<h2 id="linking-your-player-and-reporting-stats">Linking your player and reporting stats</h2>
+<p>Faction Helix doesn&#39;t connect to your Marvel Rivals account. Instead you tell it your numbers, and it keeps track of them over time.</p>
+<div class="scroll"><table><thead><tr><th>Command</th><th>What it does</th></tr></thead><tbody><tr><td><code>/link</code></td><td>Connects your Discord account to an in-game name, so your stats and rank have a home</td></tr><tr><td><code>/report rank</code></td><td>Reports your current tier, division and points (for example Gold II, 40 points)</td></tr><tr><td><code>/report stats</code></td><td>Reports matches, wins, kills, deaths and assists</td></tr><tr><td><code>/report hero</code></td><td>Reports matches, wins and hours on one hero</td></tr><tr><td><code>/favorite</code></td><td>Sets a favorite hero (and outfit) to show on your profile card</td></tr><tr><td><code>/refresh</code></td><td>Updates your data after reporting</td></tr><tr><td><code>/unlink</code></td><td>Removes your linked player and stats</td></tr></tbody></table></div>
+<p>Because everything is self-reported, only report your own real numbers — it&#39;s what your factionmates and the leaderboard see.</p>
+<h2 id="ranks-roles-and-leaderboards">Ranks, roles and leaderboards</h2>
+<div class="scroll"><table><thead><tr><th>Command</th><th>What it does</th></tr></thead><tbody><tr><td><code>/rank</code></td><td>Shows your current reported rank</td></tr><tr><td><code>/progress</code></td><td>A chart of how your rank has moved over time</td></tr><tr><td><code>/leaderboard</code></td><td>The server&#39;s top players</td></tr><tr><td><code>/compare</code></td><td>Sets your stats side by side with another member&#39;s</td></tr><tr><td><code>/serverstats</code></td><td>How the whole server&#39;s ranks and heroes are spread</td></tr></tbody></table></div>
+<p>If an admin has turned on <strong>rank roles</strong>, you&#39;ll automatically get a colored Discord role (Bronze through One Above All) that updates as you report a new rank.</p>
+<h2 id="factions">Factions</h2>
+<p>A faction is a team of up to six members.</p>
+<div class="scroll"><table><thead><tr><th>Command</th><th>What it does</th></tr></thead><tbody><tr><td><code>/faction create</code></td><td>Starts a faction and makes you its leader</td></tr><tr><td><code>/faction join</code></td><td>Joins an open faction, or asks the leader if it&#39;s private</td></tr><tr><td><code>/faction leave</code></td><td>Leaves your faction</td></tr><tr><td><code>/faction info</code></td><td>Your faction and its members</td></tr><tr><td><code>/faction list</code></td><td>Every faction in the server</td></tr><tr><td><code>/faction top</code></td><td>Factions ranked by average rank</td></tr><tr><td><code>/faction stats</code></td><td>Your faction&#39;s numbers</td></tr><tr><td><code>/faction style</code></td><td>Sets your faction&#39;s color and emblem (leaders only)</td></tr></tbody></table></div>
+<p>A faction&#39;s leader can also request a <strong>private channel and role</strong> for the faction (a moderator approves it), and can lock the faction to stop new members from joining freely.</p>
+<h2 id="challenges">Challenges</h2>
+<p>Challenges are goals to work toward, alone or with your faction.</p>
+<div class="scroll"><table><thead><tr><th>Command</th><th>What it does</th></tr></thead><tbody><tr><td><code>/challenge list</code></td><td>Challenges you can join</td></tr><tr><td><code>/challenge join</code></td><td>Joins a challenge</td></tr><tr><td><code>/challenge standings</code></td><td>See how a challenge is going</td></tr><tr><td><code>/challenge history</code></td><td>How earlier rounds of a challenge went</td></tr><tr><td><code>/challenge fame</code></td><td>The hall of fame — who has won the most rounds</td></tr><tr><td><code>/challenge leave</code></td><td>Drops out and removes your progress</td></tr></tbody></table></div>
+<p>Progress is added with a button on the challenge&#39;s card in the menu, or via <code>/challenge submit</code>. <strong>Shared goals</strong> are challenges the whole group works toward together, with milestone announcements at 25%, 50% and 75%.</p>
+<h2 id="awards-and-vouching">Awards and vouching</h2>
+<p><code>/awards</code> shows the server&#39;s awards and who holds them — admins create and give these by hand to recognize members.</p>
+<p><code>/vouch</code> lets a member vouch for another member&#39;s reported stats, which shows on their profile as a light form of verification from someone who has actually played with them.</p>
+<h2 id="the-menu-in-more-detail">The menu, in more detail</h2>
+<p><code>/menu</code> opens to a <strong>Home</strong> page with one button per section (You, Rankings, Factions, Challenges, J.A.R.V.I.S. if it&#39;s added, Admin for admins, Privacy). Each page lists its buttons with a one-line description, and has Home / previous / next / Close buttons at the bottom.</p>
+<p>Everything in the menu is private — only you see it — and every button does exactly what the matching slash command does, so nothing here is a shortcut around the server&#39;s rules or an admin&#39;s settings.</p>
+<h2 id="meet-jarvis">Meet J.A.R.V.I.S.</h2>
+<p>J.A.R.V.I.S. is a <strong>second, optional bot</strong> that hosts and schedules for the server. It&#39;s a separate Discord application — its own name, its own permissions — that shares the same data as Faction Helix.</p>
+<p>An admin adds it by running <code>/admin jarvis</code> on Faction Helix and pressing <strong>Install J.A.R.V.I.S.</strong>; only someone with the Manage Server permission can approve it. It&#39;s off by default and never asks for the Administrator permission.</p>
+<p>Once it&#39;s in, an admin turns on the features below with <code>/jarvis &lt;feature&gt; setup</code>, and <code>/jarvis status</code> shows what&#39;s on and whether anything needs attention.</p>
+<h2 id="hero-training-sessions">Hero training sessions</h2>
+<p>Hosts (server admins and members with the Coach role) schedule practice sessions for a specific hero.</p>
+<div class="scroll"><table><thead><tr><th>Command</th><th>What it does</th></tr></thead><tbody><tr><td><code>/session create</code></td><td>Schedules a session (title, start time, hero, duration, capacity)</td></tr><tr><td><code>/session list</code></td><td>Sessions coming up</td></tr><tr><td><code>/session mine</code></td><td>Sessions you&#39;ve signed up for</td></tr><tr><td><code>/session cancel</code></td><td>Cancels a session you host, or any (admins)</td></tr><tr><td><code>/session attendance</code></td><td>Who came, who didn&#39;t, and who dropped in (host or admin)</td></tr></tbody></table></div>
+<p>Each session gets a sign-up card with <strong>Sign up</strong> and <strong>Leave</strong> buttons, a matching native Discord event tied to a voice channel, a waitlist once it&#39;s full, and a reminder an hour before it starts. A session can repeat every week or two.</p>
+<h2 id="tickets-reports-suggestions-and-support">Tickets: reports, suggestions and support</h2>
+<p>If a server has tickets turned on, you can privately reach the staff three ways: the <strong>staff desk</strong> buttons posted in a channel, <code>/ticket open</code>, or right-clicking a message and choosing <strong>Apps → Report to staff</strong>.</p>
+<p>J.A.R.V.I.S. is the middle man: your ticket goes to a staff-only channel, and the staff&#39;s replies come back to your <strong>direct messages</strong> (usually as &quot;the staff team&quot;, not a named person). Whatever you reply in DMs is carried back to the staff. You can have one open ticket at a time, and press <strong>Close ticket</strong> when you&#39;re done. Staff use <code>/ticket list</code>, <code>reply</code>, <code>claim</code> and <code>close</code>.</p>
+<h2 id="looking-for-group">Looking for group</h2>
+<p><code>/lfg post</code> posts a card saying what you&#39;re after (mode, how many more players, roles or rank wanted, a voice channel) with <strong>Join</strong>, <strong>Leave</strong> and <strong>Close</strong> buttons. When your group fills up, everyone in it is pinged together. A post ends by itself after a few hours if you don&#39;t close it first. <code>/lfg list</code> shows what&#39;s open right now.</p>
+<h2 id="events-news-and-announcements">Events, news and announcements</h2>
+<p><code>/events</code> lists any Discord event coming up in the server (not just training sessions) — J.A.R.V.I.S. reminds the events channel an hour before and again at the start.</p>
+<p><code>/news</code> shows the latest Marvel Rivals patch notes and news, pulled straight from the game&#39;s official Steam announcements. If a server turns this on, new items post automatically as they&#39;re published.</p>
+<p><code>/announce</code> lets admins (and anyone with the announcer role) post a formal announcement to the announcements channel.</p>
+<h2 id="faction-tournaments">Faction tournaments</h2>
+<p>A faction&#39;s leader runs <code>/tournament create</code> to set up a tournament page with a countdown and <strong>Going / Maybe / Can&#39;t go</strong> buttons for the whole faction.</p>
+<p><code>/tournament plan</code> suggests up to two team stacks (2 Vanguard, 2 Duelist, 2 Strategist) built from the heroes members have already reported with <code>/report hero</code>. <code>/tournament lineup</code> puts a suggested stack straight onto the roster, or <code>/tournament roster</code> sets one person by hand. <code>/tournament list</code>, <code>/tournament rsvp</code> and <code>/tournament cancel</code> round it out. The page also shows how many practice sessions each roster member attended.</p>
+<h2 id="your-data-and-privacy">Your data and privacy</h2>
+<p>Everything is self-reported and stays under your control:</p>
+<ul><li><p><strong><code>/unlink</code></strong> removes your linked player and stats, keeping your Discord account.</p></li><li><p><strong><code>/deletedata</code></strong> erases everything the bot stores about you — profile, history, faction membership, tickets, sessions, everything — after you type DELETE to confirm.</p></li></ul>
+<p>For the full details on what&#39;s collected and why, see the bot&#39;s privacy policy — add its link here once it&#39;s published.</p>
+<h2 id="getting-help">Getting help</h2>
+<p>Every feature above can be switched on or off by your server&#39;s admins, so if something is missing (rank roles, faction channels, tickets, tournaments), ask an admin — it may simply not be turned on yet in your server.</p>
+<p>For a bug, an idea, or a question the bot itself can&#39;t answer, ask an admin or moderator directly, or use the ticket system above if the server has it on.</p>
+
+</main>
+</body>
+</html>
